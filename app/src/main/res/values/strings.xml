@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BLEMon</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_blemon_ui">BLEMon</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="Bottom">Contact us:&#160;</string>
+    <string name="ble_not_supported">Bluetooth Low energy not supported, please uninstall app</string>
+
+</resources>

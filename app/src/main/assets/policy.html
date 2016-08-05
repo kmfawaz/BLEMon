@@ -1,0 +1,51 @@
+
+<?xml version='1.0' encoding='UTF-8'?><!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN' 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'><html xmlns='http://www.w3.org/1999/xhtml'><head><title>PhoneLabBLEMonDescriptionAndPrivacyPolicy</title></head><body style="font-family:Arial,Helvetica,sans-serif;font-size:small"><div>
+    <span style='font-size:medium'><span style='color:#aa0000;'> Project Description </span></span><br/><br/><b>Thank you for running BLEMon from RTCL!</b><br/><br/>
+    BLEMon is an app developed by the Real-time Computing Lab (RTCL) in the University of Michigan, Ann Arbor. It is a part of a larger project aiming at characterizing the privacy threats posed by devices in the context of the Internet of Things (IoT). Some of these devices, that you use, might enable others to track you, profile you, and learn more information about you. For example, if others know you are wearing a glocuse monitor or pump, then it might indicate a certain health condition.
+
+
+    In our project, we aim to quantify how much information do these IoT devices leak about an individual. In particular, we need your help to collect information that these devices publicly broadcast. We focus on the devices that are communicate through the BLE (Bluetooth low energy) protocol as it is the most prevalent. As part of this protocol, devices advertise their presence publicly to let others know about them. BLEMon just collects these public advertisements (broadcasts) so that we learn how much information is contained in these advertisements. Below, we describe the exact data that we collect and the safeguards we implement to protect your privacy.
+    <br/><br/><span style='font-size:medium'><span style='color:#aa0000;'> Privacy Policy </span></span><br/><br/>
+    This privacy policy sets out how the Real Time Computing Laboratory (RTCL) at the Electrical Engineering and Computer Science Department in the University of Michigan, including professors, students, research assistants, visiting scholars and staff, uses and protects any information that you give RTCL when you use BLEMon (this app). RTCL may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy is effective from 5th of October, 2015.
+    <br/><br/><span style='color:#aa0000;'> What we collect </span><br/><br/>
+    We collect the following information:
+    <br/><br/> <i> BLE Device Advertisements:</i> <br/> We collect the public advertisements that the BLE powered devices are publicly broadcasting in your vicinity. It is worth noting that anyone in your vicinity (within 50m) with a smartphone (or any Bluetooth enabled device) can also collect the same information. Also, this information is meant, as part of the protocol, to be broadcasted so that others can learn what devices are close to them. In particular, we record the following information:
+    <ul>
+        <li> The time BLEMon collected the advertisement (timestamp) </li>
+        <li> The device name (device_name) </li>
+        <li> The device type, such as: smartwatch, camera, or toy (device_type) </li>
+        <li> Received Signal Strength Indicator which indicates how far the device is from the user (rssi) </li>
+        <li> The <B>hashed</B>device address; we apply hashing to prevent recording the real device address (bt_addr) </li>
+        <li> The advertisement content, usually less than 256 bytes (advertisement) </li>
+        <li> Bonding information, whether your smartphone is bonded with the observed device (device_bonded) </li>
+    </ul>
+
+    <i>Anonymized Location:</i> <br/> This app will record an anonymized version of your location while it is running. Specifically, it will obtain a location update from Android every 3 minutes. <b>However</b>, we are more interested in relative places rather than absolute location samples. As a result, we assign every place you visit a unique numeric ID (place_id), and we keep the mapping between absolute locations and these IDs private in your device (we are not interested in this mapping, and we don't collect it). This way, we know that you were at some place at different times of the day (and potentially you visited the same place at different times), but <br/><b>we will have no way of telling what that place is</b>.
+
+    <br/><br/>
+    <i>Record Format:</i> <BR>
+    Every record we log has the following format: (The data we collect is nothing else than a long list of the records shown below)
+    <br/><br/><span style='color:#7a4707;'>timestamp,timezone,device_name,bt_addr,rssi,device_type,advertisement,device_bonded,place_id
+   </span><br/><br/>
+    This is how would a record look like for a Fitbit (Surge) broadcasting its presence at 24 Sep 2015 1:32:11 AM EST while the user was at the place of ID 4. Tbe Fitbit is not bonded to the user and has an original address of E0:46:BA:00:00:00 which is F742E8C67776555A15F00375D5B8E2720FBC4CCE821A8D43CB8C61F73A9FCB67 after hashing it.
+    <br/><br/><span style='color:#7a4707;'>1443072731213,America/Detroit, Surge,F742E8C67776555A15F00375D5B8E2720FBC4CCE821A8D43CB8C61F73A9FCB67,-93,7936,0201061106BA5689A6FABFA2BD01467D6E00FBABAD08160A181004E847030609537572676500000000000000000000000000000000000000000000000000,0,4
+
+   </span><br/><br/><span style='color:#aa0000;'> What we do with the information we gather </span><br/><br/>
+    We require this information to perform our research study as described above. We won&#39;t be able to locate your  home location, work location, points of interest, or places you frequently visit in general, but we might be able to profile you through the device you might be bonded with. <b>However</b>, since we don&#39;t collect any information of personal nature, we have no method, as far as we can tell, to associate such profiles with your identity. For example, we can tell that the one of the users is wearing a fitbit, but we can&#39;t tell who is this person. Again, we can&#39;t associate any information we collect with you.
+    <br/><br/>
+    As you might have noticed, our app doesn&#39;t request Internet permissions from Android, which means that the app can never communicate with the outside world. The information we are interested in is output in the Android system log, and in a private database on your device. The only way we can get access to the location is through the experiment administrators who have to extract this information from your device and supply it to us. Thus, the process we collect information through is entirely transparent.
+    <br/><br/>
+    Once we receive the information, we keep it at our servers, and we don&#39;t share it with any third-party entity. BLEMon never engages with any communication with any external entity and doesn&#39;t leak any type of information. As part of our development we could have used third-part libraries to perform some functionalities, but they don&#39;t collect or communicate any information to third-party servers.
+    <br/><br/>
+    To be able to perform our study and analysis, we have to store the data at our servers for possibly an indefinite amount of time. We might also use the same data for future research projects. However, we will not share your data with any third-party entity without your clear consent. Currently, we don&#39;t have any plans to share the data with any third party.
+    <br/><br/>
+
+    <br/><br/><span style='color:#aa0000;'> Security </span><br/><br/>
+    We are committed to ensuring that your information is secure. We store your data on our servers that are locked in a room equipped with card access control (only RTCL members have access). Moreover, the server is protected so that only authorized users have access. In particular, only the researches engaged with this project have access to the your information.
+
+    <br/><br/><span style='color:#aa0000;'> Controlling your personal information </span><br/><br/>
+    If there is a situation when/where you feel uncomfortable with BLEMon recording nearby BLE powered devices, you have the option to stop BLEMon. BLEMon has a "stop" button that will cease all data collection unless you run it again or reboot your phone. Please note that BLEMon runs automatically whenever you boot your device. Although we access your location, but eventually we don&#39;t know what places you visit which won&#39;t pose any significant privacy threat.
+    Still, you can turn off the location switch from the app to prevent it from accessing your location in the first place.
+    <br/><br/>
+
+</div></body></html>
